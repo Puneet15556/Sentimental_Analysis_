@@ -46,7 +46,7 @@
 ```mermaid
 flowchart TD
     A["User Input: Text / Image / CSV / TXT"] --> B["Preprocessing"]
-    B --> C["Translation API → English (Only If Input is not English, Then only API will Trigger)"]
+    B --> C["Translation API(Add your API key) → English (Only If Input is not English, Then only API will Trigger)"]
     C --> D["Sentiment Model: BERT or BiLSTM"]
     D --> E{Sentiment}
     E -->|Positive / Neutral| F["Show Result ✅"]
