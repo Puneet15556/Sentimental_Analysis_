@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 9% 46%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 50%;
+
+    /* Government Theme Colors */
+    --primary: 220 90% 56%; /* Government Blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-variant: 240 100% 60%;
+    
+    --secondary: 37 89% 55%; /* Saffron */
+    --accent: 138 62% 47%; /* Green */
+    
+    /* Sentiment Colors */
+    --positive: 138 62% 47%;
+    --positive-foreground: 0 0% 100%;
+    --positive-light: 138 62% 95%;
+    
+    --negative: 0 84% 60%;
+    --negative-foreground: 0 0% 100%;
+    --negative-light: 0 84% 95%;
+    
+    --neutral: 215 16% 47%;
+    --neutral-foreground: 0 0% 100%;
+    --neutral-light: 215 16% 95%;
+
+    /* Government Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 56%), hsl(240 100% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-positive: linear-gradient(135deg, hsl(138 62% 47%), hsl(138 62% 60%));
+    --gradient-negative: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 70%));
+    --gradient-neutral: linear-gradient(135deg, hsl(215 16% 47%), hsl(215 16% 60%));
+
+    /* Enhanced Shadows */
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-elevation: 0 20px 40px -10px hsl(220 90% 56% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Government Dashboard Utilities */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-positive {
+  background: var(--gradient-positive);
+}
+
+.bg-gradient-negative {
+  background: var(--gradient-negative);
+}
+
+.bg-gradient-neutral {
+  background: var(--gradient-neutral);
+}
+
+.text-positive {
+  color: hsl(var(--positive));
+}
+
+.text-negative {
+  color: hsl(var(--negative));
+}
+
+.text-neutral {
+  color: hsl(var(--neutral));
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
