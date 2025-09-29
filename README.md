@@ -1,45 +1,45 @@
-Sentiment Analysis App 🚀
+# 🚀 Sentiment Analysis App 
 
-A production-ready sentiment analysis web application built with fine-tuned BERT and BiLSTM models. The app is deployed on Vercel, supports multilingual input via translation API, and sends email alerts for negative feedback.
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)  
+![Model](https://img.shields.io/badge/Model-BERT%20%7C%20BiLSTM-orange)  
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)  
 
-🔥 Features
+**Vercel App Link:** https://sentiment-alert-ai.vercel.app/
+ 
+ ⚡ A **Production-ready sentiment analysis web app** with **fine-tuned BERT** (quantized) & **BiLSTM** models.  
+ 🌍 Supports **multilingual input** via translation API.  
+ 📩 Sends **email alerts** on negative feedback.  
+ 🚀 Deployed seamlessly on **Vercel**.  
 
-Fine-tuned BERT model (quantized for faster inference).
+---
 
-Deep Learning BiLSTM model (alternative backend for comparison).
+## ✨ Features
+- 🤖 **Fine-tuned BERT model** (quantized → faster inference).  
+- 🔁 **BiLSTM deep learning model** (alternative backend).  
+- 🌍 **Multilingual support** – Auto-translates non-English text.  
+- 🏷 **Sentiment detection** – Positive / Negative / Neutral.  
+- 📩 **Email alerts** – Auto-triggered for **negative feedback**.  
+- ☁️ **Vercel Deployment** – Fast, serverless, production-ready.  
 
-Multilingual Support – Any non-English input is automatically translated to English before sentiment prediction.
+---
 
-Sentiment Categories – Detects Positive, Negative, Neutral sentiment.
+## 🛠 Tech Stack  
 
-Email Alerts – Triggers email notifications for negative feedback.
+| Layer       | Tools Used |
+|-------------|------------|
+| **Frontend / Deployment** | Vercel |
+| **Backend** | Python, FastAPI (or Flask if applicable) |
+| **Models**  | BERT (quantized), BiLSTM |
+| **Translation API** | Google Translate / DeepL |
+| **Email Alerts** | SMTP / SendGrid |
 
-Deployed on Vercel – Scalable, serverless deployment.
+---
 
-🛠️ Tech Stack
-
-Frontend/Deployment: Vercel
-
-Backend: Python / FastAPI (or Flask if you used that – change accordingly)
-
-NLP Models:
-
-Fine-tuned BERT (quantized for efficiency)
-
-BiLSTM model (baseline)
-
-Translation API: Google Translate API (or specify if you used DeepL/Azure/etc.)
-
-Email Alerts: SMTP / SendGrid / Nodemailer (whichever you used)
-
-⚙️ How It Works
-
-User enters text in any language.
-
-If not in English → translated to English.
-
-Text is passed to the BERT model (or BiLSTM).
-
-Model outputs sentiment score (Positive, Negative, Neutral).
-
-If Negative → system triggers an email alert.
+## ⚙️ How It Works  
+```mermaid
+flowchart TD
+    A[User Input: Any Language] --> B[Translation API → English]
+    B --> C[Sentiment Model (BERT / BiLSTM)]
+    C --> D{Sentiment}
+    D -->|Positive / Neutral| E[Show Result ✅]
+    D -->|Negative| F[Trigger Email Alert 📩]
